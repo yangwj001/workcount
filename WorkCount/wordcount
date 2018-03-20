@@ -1,0 +1,105 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.io.FileWriter;
+
+public class wc_homework {
+	
+	public static void main(String[] args) throws Exception {
+		
+		 try {if (args.length == 0) {                                    //没有参数时提示
+	           System.out.println("您调用wc.exe时没有指定任何参数！");  
+	           return;  }
+		      String name =args[args.length-1];                         //默认最后一个参数为读取文件地址
+			  int countChar = 0;
+			  int countword = 0;
+			  int countline = 0;
+			  int emptyline = 0;
+			  int codeline = 0;
+			  int explainline =0;
+			  int codeflag = 0;
+			  String except= null;
+			 // String name="D:/test.txt";
+			  String output="result.txt";
+			  String str = System.getProperty("line.separator");
+			   for(int m=0;m<args.length-1;m++){
+			    	  
+				  if(args[m].equals("-o")) {
+					  output=args[m+1];  }
+				  if(args[m].equals("-e")) {
+					  
+					  except=args[m+1];  }
+				  }
+			  FileInputStream fis = new FileInputStream(name);
+			  BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+			 
+			  while(br.read()!=-1)//read()=-1代表数据读取完毕
+			  {
+			   String s = br.readLine();
+			   countChar += s.length();//字符个数就是字符长度
+			   if (s.length()==0) emptyline++;
+			   String[] aa=s.split(" |,");
+			   
+			   
+			   countline++;//因为是按行读取，所以每次增加一即可计算出行的数目
+			   for (int i = 0 ; i <aa.length ; i++ ) {
+                      
+				      if(!(aa[i] == null || aa[i].isEmpty()))
+				      {countword++;
+				       codeflag++;
+				       
+				       if(!(except==null||except.isEmpty()))
+				       {  FileInputStream ff = new FileInputStream(except);
+						  BufferedReader bc = new BufferedReader(new InputStreamReader(ff));
+						  String ss = bc.readLine();
+				    	   String[] bb=ss.split(" ");
+				    	   for(int k=0;k<bb.length;k++)
+				    	   {
+				    		   if(aa[i].equals(bb[k])) {countword--;}
+				    	   }
+				       }
+				      }
+				      if(aa[i].equals("//")) {explainline++;}
+				      
+				    }
+			   if(codeflag>1) codeline++;
+			   codeflag=0;
+			  }
+			      
+			   FileWriter fw = new FileWriter(output);
+			  for(int m=0;m<args.length-1;m++)
+			  {   
+				  if (args[m].equals("-c")){ 
+					  fw.write(name+",字符数： "+countChar);
+			          fw.write(str);
+			          }
+				  if (args[m].equals("-w")){
+			          fw.write(name+",单词数： "+countword);
+			          fw.write(str);
+			          }
+				  if (args[m].equals("-l")) {
+			          fw.write(name+",行数：    "+countline);
+			          fw.write(str);}
+				  if(args[m].equals("-a")) {
+					  fw.write(name+",代码行数：    "+codeline);
+			          fw.write(str);
+			          fw.write(name+",空行数：    "+emptyline);
+			          fw.write(str);
+			          fw.write(name+",注释行：    "+explainline);
+			          fw.write(str);
+				  }
+			  }
+			  fw.close();
+			  br.close();//关闭文件
+			  
+		 }
+		 catch(FileNotFoundException e){
+			 System.out.println("没有找到指定文件");
+		 }
+	}
+
+}
