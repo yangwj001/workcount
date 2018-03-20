@@ -1,10 +1,10 @@
-测试输入(test.c需最后一个输入)：					 测试结果:  				                  与预期是否相符： 
-wc.exe		    	    		               提示没有指定参数   	     	     	      是
-wc.exe -c test.c 	   		               result中显示字符数		   	              是
-wc.exe -w test.c	   		               result中显示单词数	           	        是
-wc.exe -l test.c           		         result中显示行数 		   	               是
-wc.exe -c -w -l -o out.txt test.c	     out.txt中显示字符，单词，行数		         是       
-wc.exe -c -w -l -o test.c		           提示找不到文件				                 是
-wc.exe -c -w -l -a test.c		           result中显示基本统计和复杂统计	          是
-wc.exe -c -w -l -e test.c		           提示找不到文件						              是
-wc.exe -c -w -l -s test		             分析文档下所有.c文件		                是
+测试输入(test.c需最后一个输入)                         测试结果:                         与预期是否相符： 				
+wc.exe		    	    		          提示没有指定参数   	             是 	     	     	
+wc.exe -c test.c 	   		               result.txt写入字符数		     是 	
+wc.exe -w test.c	   		               result.txt写入单词数	             是 	
+wc.exe -l test.c           		               result.txt写入行数 		     是  	
+wc.exe -c -w -l -o out.txt test.c	               out.txt 写入字符，单词，行数	     是	           
+wc.exe -c -w -l -o test.c		               提示找不到文件			     是	
+wc.exe -c -w -l -a test.c		               result.txt 写入基本统计和复杂统计     是	
+wc.exe -c -w -l -e test.c		               提示找不到文件			     是			
+wc.exe -c -w -l -s test		                       递归分析文档下所有.c文件		     是
