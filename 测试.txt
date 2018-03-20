@@ -1,10 +1,10 @@
-²âÊÔÊäÈë£º					²âÊÔ½á¹û:  				
-wc.exe		    	    		ÌáÊ¾Ã»ÓĞÖ¸¶¨²ÎÊı   	     	     	
-wc.exe -c test.c 	   		result.txtĞ´Èë×Ö·ûÊı		   	
-wc.exe -w test.c	   		result.txtĞ´Èëµ¥´ÊÊı	           	
-wc.exe -l test.c           		result.txtĞ´ÈëĞĞÊı 		   	
-wc.exe -c -w -l -o out.txt test.c	out.txt Ğ´Èë×Ö·û£¬µ¥´Ê£¬ĞĞÊı		           
-wc.exe -c -w -l -o test.c		ÌáÊ¾ÕÒ²»µ½ÎÄ¼ş				
-wc.exe -c -w -l -a test.c		result.txt Ğ´Èë»ù±¾Í³¼ÆºÍ¸´ÔÓÍ³¼Æ	
-wc.exe -c -w -l -e test.c		ÌáÊ¾ÕÒ²»µ½ÎÄ¼ş						
-wc.exe -c -w -l -s test		        µİ¹é·ÖÎöÎÄµµÏÂËùÓĞ.cÎÄ¼ş		
+æµ‹è¯•è¾“å…¥(test.céœ€æœ€åä¸€ä¸ªè¾“å…¥)ï¼š					 æµ‹è¯•ç»“æœ:  				
+wc.exe		    	    		               æç¤ºæ²¡æœ‰æŒ‡å®šå‚æ•°   	     	     	
+wc.exe -c test.c 	 Â  		 Â  Â  Â  Â  Â  Â  Â  resultä¸­æ˜¾ç¤ºå­—ç¬¦æ•°		 Â  	
+wc.exe -w test.c	   		               resultä¸­æ˜¾ç¤ºå•è¯æ•°	           	
+wc.exe -l test.c           		         resultä¸­æ˜¾ç¤ºè¡Œæ•° 		   	
+wc.exe -c -w -l -o out.txt test.c	 Â  Â  out.txtä¸­æ˜¾ç¤ºå­—ç¬¦ï¼Œå•è¯ï¼Œè¡Œæ•°		 Â  Â  Â  Â  Â  
+wc.exe -c -w -l -o test.c		           æç¤ºæ‰¾ä¸åˆ°æ–‡ä»¶				
+wc.exe -c -w -l -a test.c		           resultä¸­æ˜¾ç¤ºåŸºæœ¬ç»Ÿè®¡å’Œå¤æ‚ç»Ÿè®¡	
+wc.exe -c -w -l -e test.c		           æç¤ºæ‰¾ä¸åˆ°æ–‡ä»¶						
+wc.exe -c -w -l -s test		             åˆ†ææ–‡æ¡£ä¸‹æ‰€æœ‰.cæ–‡ä»¶		
