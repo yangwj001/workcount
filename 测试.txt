@@ -1,0 +1,10 @@
+测试输入：					测试结果:  				
+wc.exe		    	    		提示没有指定参数   	     	     	
+wc.exe -c test.c 	   		result.txt写入字符数		   	
+wc.exe -w test.c	   		result.txt写入单词数	           	
+wc.exe -l test.c           		result.txt写入行数 		   	
+wc.exe -c -w -l -o out.txt test.c	out.txt 写入字符，单词，行数		           
+wc.exe -c -w -l -o test.c		提示找不到文件				
+wc.exe -c -w -l -a test.c		result.txt 写入基本统计和复杂统计	
+wc.exe -c -w -l -e test.c		提示找不到文件						
+wc.exe -c -w -l -s test		        递归分析文档下所有.c文件		
